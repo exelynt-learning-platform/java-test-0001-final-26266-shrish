@@ -1,37 +1,30 @@
 public class JAVA_TEST_0001 {
 
+    static final int PATTERN_SIZE = 5;
+
     public static void main(String[] args) {
-        int n=5;
+        for (int i = 0; i < PATTERN_SIZE; i++) {
+            printRow(i);
+        }
+        for (int i = PATTERN_SIZE - 2; i >= 0; i--) {
+            printRow(i);
+        }
+    }
 
-        for (int i=0 ; i<n ; i++){
-            for (int j= 0 ; j < (n-i-1) ; j++){
+    private static void printRow(int i) {
+        for (int s = 0; s < (PATTERN_SIZE - 1 - i); s++) {
+            System.out.print(" ");
+        }
+
+        System.out.print("*");
+
+        if (i > 0) {
+            for (int s = 0; s < (2 * i - 1); s++) {
                 System.out.print(" ");
             }
-
             System.out.print("*");
-            if(i> 0) {
-                for (int j = 0; j < (2 *i -1); j++) {
-                    System.out.print(" ");
-                }
-                System.out.print("*");
-            }
-            System.out.println();
         }
+
         System.out.println();
-
-        for (int i =n-2; i>=0; i--) {
-            for (int j=0; j < (n - 1 - i); j++) {
-                System.out.print(" ");
-            }
-            System.out.print("*");
-
-            if (i > 0) {
-                for (int s = 0; s < (2 * i - 1); s++) {
-                    System.out.print(" ");
-                }
-                System.out.print("*");
-            }
-            System.out.println();
-        }
     }
 }
